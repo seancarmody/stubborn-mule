@@ -1,3 +1,5 @@
 First attempt at setting up a git repository.
 
 The plan is to store code used for analysis and charts on the blog http://www.stubbornmule.net/
+
+The first project I have added is the code to produce charts based on the Guardian's "1000 Songs to Hear Before You Die". Some of these charts appear in this blog post: http://www.stubbornmule.net/2009/07/love-old-fashioned/
