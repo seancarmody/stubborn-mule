@@ -3,8 +3,11 @@ Analysis of the Guardian's "1000 Songs to Hear Before You Die"
 Stubborn Mule blog post: http://www.stubbornmule.net/2009/07/love-old-fashioned/
 Data: http://www.guardian.co.uk/news/datablog/2009/mar/20/1
 
-Note that I have had to clean up the data, removing extraneous quotation marks and commas in the years and correcting the odd typo (although I don't guarantee to have found them all).
+Note that I have had to clean up the data, removing extraneous quotation marks
+and commas in the years and correcting the odd typo (although I don't guarantee
+to have found them all).
 
-This is the first big of code I am publishing to this repostitory. I'm learning git as I go.
+This is the first big of code I am publishing to this repostitory. I'm learning
+git as I go.
 
 Sean Carmody
