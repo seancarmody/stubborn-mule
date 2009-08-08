@@ -2,8 +2,11 @@
 #
 # Author: Sean Carmody
 #
-# Produce charts using from the Guardian's list of "1000 songs to hear before you die"
-
+# Produce charts using from the Guardian's list of
+# "1000 songs to hear before you die" 
+#
+# Licenced: creative commons Attribution-Share Alike 2.5 Australia
+# http://creativecommons.org/licenses/by-sa/2.5/au/
 
 mule <- function(side=1, cex=0.8, line=2, adj=1,...) {
 	# Add "stubbornmule.net" label to the bottom of charts
