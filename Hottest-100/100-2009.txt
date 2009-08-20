@@ -1,0 +1,100 @@
+1	Smells Like Teen Spirit	Nirvana	United States	1991	1	1 (1991), 1 (1998)
+2	Killing in the Name	Rage Against the Machine	United States	1992	6 (1993)	17 (1998)
+3	Hallelujah	Jeff Buckley	United States	1994		
+4	Love Will Tear Us Apart	Joy Division	United Kingdom	1980		1 (1989), 1 (1990), 2 (1991), 16 (1998)
+5	Paranoid Android	Radiohead	United Kingdom	1997	7	13 (1998)
+6	Bohemian Rhapsody	Queen	United Kingdom	1975		49 (1991), 8 (1998)
+7	Last Goodbye	Jeff Buckley	United States	1994		4 (1998)
+8	Under the Bridge	Red Hot Chili Peppers	United States	1991		31 (1998)
+9	Everlong	Foo Fighters	United States	1997		
+10	Stairway to Heaven	Led Zeppelin	United Kingdom	1971		30 (1989), 61 (1990), 30 (1991), 6 (1998)
+11	Imagine	John Lennon	United Kingdom	1971		31 (1989), 66 (1990)
+12	Wonderwall	Oasis	United Kingdom	1995	1	
+13	Creep	Radiohead	United Kingdom	1992	2 (1993)	5 (1998)
+14	Bittersweet Symphony	The Verve	United Kingdom	1997	4	99 (1998)
+15	Karma Police	Radiohead	United Kingdom	1997	9	54 (1998)
+16	Wish You Were Here	Pink Floyd	United Kingdom	1975		33 (1989), 35 (1990), 58 (1991), 41 (1998)
+17	The Nosebleed Section	Hilltop Hoods	Australia	2004	9 (2003)	
+18	Knights of Cydonia	Muse	United Kingdom	2006	1 (2007)	
+19	One	Metallica	United States	1988		89 (1991), 7 (1998)
+20	Seven Nation Army	The White Stripes	United States	2003	3	
+21	These Days	Powderfinger	Australia	2000	1 (1999)	
+22	Teardrop	Massive Attack	United Kingdom	1998	23	
+23	Throw Your Arms Around Me	Hunters & Collectors	Australia	1985		2 (1989), 2 (1990), 4 (1991), 2 (1998)
+24	A Day in the Life	The Beatles	United Kingdom	1967		69 (1989), 49 (1998)
+25	Alive	Pearl Jam	United States	1991		3 (1998)
+26	Thriller	Michael Jackson	United States	1984		
+27	My Happiness	Powderfinger	Australia	2000	1	
+28	Fake Plastic Trees	Radiohead	United Kingdom	1995		
+29	Where Is My Mind?	Pixies	United States	1988		
+30	All Along the Watchtower	Jimi Hendrix	United States	1968		49 (1989), 83 (1990), 61 (1991), 70 (1998)
+31	Enter Sandman	Metallica	United States	1991		9 (1998)
+32	Blue Monday	New Order	United Kingdom	1983		5 (1989), 5 (1990), 10 (1991), 30 (1998)
+33	Tomorrow	Silverchair	Australia	1994	5	59 (1998)
+34	Prisoner of Society	The Living End	Australia	1997	15	18 (1998)
+35	1979	The Smashing Pumpkins	United States	1996	13	71 (1998)
+36	Into My Arms	Nick Cave and the Bad Seeds	Australia	1997	18	84 (1998)
+37	Stinkfist	Tool	United States	1996	2	24 (1998)
+38	Mr. Brightside	The Killers	United States	2004	14	
+39	Better Man	Pearl Jam	United States	1994	44 (1995)	22 (1998)
+40	Come as You Are	Nirvana	United States	1991	76	62 (1998)
+41	Billie Jean	Michael Jackson	United States	1983		
+42	Banquet	Bloc Party	United Kingdom	2005		
+43	God Only Knows	The Beach Boys	United States	1966		
+44	Hey Jude	The Beatles	United Kingdom	1968		
+45	No One Knows	Queens of the Stone Age	United States	2002	1	
+46	Epic	Faith No More	United States	1990		19 (1998)
+47	Betterman	The John Butler Trio	Australia	2001	5	
+48	Sabotage	Beastie Boys	United States	1994	16	44 (1998)
+49	Sweet Child o' Mine	Guns N' Roses	United States	1988		27 (1991), 77 (1998)
+50	Don't Dream It's Over	Crowded House	Australia / New Zealand	1986		76 (1998)
+51	Bullet with Butterfly Wings	The Smashing Pumpkins	United States	1995	2	33 (1998)
+52	Berlin Chair	You Am I	Australia	1994	23	61 (1998)
+53	Comfortably Numb	Pink Floyd	United Kingdom	1979		95 (1990), 73 (1991), 90 (1998)
+54	Close to Me	The Cure	United Kingdom	1985		89 (1998)
+55	Like a Rolling Stone	Bob Dylan	United States	1965		
+56	Lover, You Should've Come Over	Jeff Buckley	United States	1994		47 (1998)
+57	Forty-Six & 2	Tool	United States	1997	30	57 (1998)
+58	Around the World	Daft Punk	France	1997		
+59	One Crowded Hour	Augie March	Australia	2006	1	
+60	Hurt	Johnny Cash	United States	2003		
+61	Song 2	Blur	United Kingdom	1997	2	46 (1998)
+62	Closer	Nine Inch Nails	United States	1994	2	14 (1998)
+63	Thunderstruck	AC/DC	Australia	1990		
+64	Blister in the Sun	Violent Femmes	United States	1982		46 (1989), 41 (1990), 9 (1991), 15 (1998)
+65	Born Slippy	Underworld	United Kingdom	1995	12 (1996)	
+66	Tiny Dancer	Elton John	United Kingdom	1971		
+67	Brick	Ben Folds Five	United States	1997	12 (1998)	32 (1998)
+68	Dammit (Growing Up)	Blink 182	United Kingdom	1987		1 (1998)
+69	Grace	Jeff Buckley	United States	1994	89 (1995)	29 (1998)
+70	Breathe	The Prodigy	United Kingdom	1996	7	95 (1998)
+71	How Soon Is Now?	The Smiths	United Kingdom	1984		7 (1989), 3 (1990), 6 (1991), 28 (1998)
+72	New Slang	The Shins	United States	2001		
+73	London Calling	The Clash	United Kingdom	1979		18 (1989), 28 (1990), 97 (1991)
+74	Lithium	Nirvana	United States	1991		3 (1991), 45 (1998)
+75	Good Riddance (Time of Your Life)	Green Day	United States	1997	84	
+76	Fools Gold	The Stone Roses	United Kingdom	1989		6 (1990), 7 (1991), 39 (1998)
+77	Hearts a Mess	Gotye	Australia	2006	8	
+78	Today	The Smashing Pumpkins	United States	1993	25 (1994)	40 (1998)
+79	Life on Mars?	David Bowie	United Kingdom	1971		
+80	Paint It, Black	The Rolling Stones	United Kingdom	1966		
+81	Common People	Pulp	United Kingdom	1995	38	
+82	Chop Suey!	System of a Down	Armenia / United States	2001	3	
+83	Every You Every Me	Placebo	United Kingdom	1999	5	
+84	No Woman, No Cry	Bob Marley & The Wailers	Jamaica	1974		
+85	Bohemian Like You	The Dandy Warhols	United States	2000	10	
+86	Come Together	The Beatles	United Kingdom	1969		
+87	Yellow	Coldplay	United Kingdom	2000	5	
+88	Gimme Shelter	The Rolling Stones	United Kingdom	1969		
+89	Bulls on Parade	Rage Against the Machine	United States	1996	46	
+90	Sex on Fire	Kings of Leon	United States	2008	1	
+91	Back in Black	AC/DC	Australia	1980		
+92	Skinny Love	Bon Iver	United States	2008	21	
+93	Unfinished Sympathy	Massive Attack	United Kingdom	1991		64 (1991), 34 (1998)
+94	Float On	Modest Mouse	United States	2004	11	
+95	Superstition	Stevie Wonder	United States	1972		
+96	One More Time	Daft Punk	France	2000	61 (2001)	
+97	Beds Are Burning	Midnight Oil	Australia	1987		
+98	Kashmir	Led Zeppelin	United Kingdom	1975		63 (1998)
+99	Wolf Like Me	TV on the Radio	United States	2006	63	
+100	Take Me Out	Franz Ferdinand	United Kingdom	2004	1	

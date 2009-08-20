@@ -1,0 +1,28 @@
+data <-read.csv("100-2009.txt", sep="\t", header=FALSE)
+attach(data)
+
+png("chart.png", height=400, width=400)
+par(mar=c(2,2,0,1)+.5)
+plot(V5, 101-V1, pch="", xlab="", ylab="Rank", yaxt="n", bty="n")
+text(V5,101-V1, labels=V2, cex=.7, xpd=NA, col="blue")
+axis(side=2, at=c(100,0:3*25+1), labels=c(1,100-0:3*25))
+dev.off()
+
+png("artists.png", height=400, width=400)
+par(mar=c(2,2,0,1)+.5)
+plot(V5, V1, pch="", xlab="", ylab="Rank", yaxt="n", bty="n")
+text(V5,101-V1, labels=V3, cex=.8, xpd=NA, col="blue")
+axis(side=2, at=c(100,0:3*25+1), labels=c(1,100-0:3*25))
+dev.off()
+
+png("points.png", height=400, width=400)
+par(mar=c(2,2,0,1)+.5)
+plot(V5, 101-V1, pch=19, xlab="", ylab="Rank", yaxt="n", bty="n", cex=0.8, col="blue")
+axis(side=2, at=c(100,0:3*25+1), labels=c(1,100-0:3*25))
+dev.off()
+
+png("hist.png", height=400, width=400)
+par(mar=c(2,4,0,0)+.5)
+hist(V5, xlab="", main="")
+dev.off()
+detach(data)
