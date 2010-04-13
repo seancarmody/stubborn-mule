@@ -1,7 +1,6 @@
 Analysis of the Guardian's "1000 Songs to Hear Before You Die"
 
-Stubborn Mule "blog post":http://www.stubbornmule.net/2009/07/love-old-fashioned/
-"Source data":http://www.guardian.co.uk/news/datablog/2009/mar/20/1
+The charts are used in this Stubborn Mule "blog post":http://www.stubbornmule.net/2009/07/love-old-fashioned/ and are based on this original "source data":http://www.guardian.co.uk/news/datablog/2009/mar/20/1
 
 Note that I have had to clean up the data, removing extraneous quotation marks
 and commas in the years and correcting the odd typo (although I don't guarantee
