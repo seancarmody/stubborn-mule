@@ -19,6 +19,8 @@ getSymbols("PCE", src="FRED")
 getSymbols("PCEPI", src="FRED")
 PCE <- merge(PCE, PCEPI)
 PCE$REAL <- PCE$PCE / PCE$PCEPI * as.numeric(tail(PCE$PCEPI, 1))
+getSymbols("PI", src="FRED")
+PCE <- merge(PCE, PI)
 
 # Draw full time-series chart
 png("PCE.png", height=350, width=400)
@@ -107,4 +109,21 @@ grid(nx=NA, ny=NULL)
 labels <- axis.Date(side=3, x=time(PCE.rate))
 abline(v=labels, lty="dotted", col="lightgrey")
 legend(4500, 8, lty=1, col="blue", legend="smoothed growth rate", bty="n")
+dev.off()
+
+# Plot expenditure/income 
+
+png("PCEvPI.png", height=350, width=400)
+par(mar=c(3.5,4,3,4))
+
+plot(time(PCE), PCE$PCE/ PCE$PI * 100, main="", log="y", type="l",
+	ylab="Consumption/Income (%)")
+
+# Plot secondary axis (log)
+Axis(side=4)
+
+# Plot grid-lines
+grid(nx=NA, ny=NULL)
+labels <- axis.Date(side=3, x=time(PCE))
+abline(v=labels, lty="dotted", col="lightgrey")
 dev.off()
