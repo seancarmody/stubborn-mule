@@ -4,4 +4,6 @@ This R code produces charts used in the [Stubborn Mule](http://www.stubbornmule.
 
 The [original data](http://www.bea.gov/newsreleases/national/pi/pinewsrelease.htm) is published by the [US Bureau of Economic Analysis](http://www.bea.gov). This data is also collated by the Federal Reserve Bank of St. Louis in their ["FRED" Economic Database](http://research.stlouisfed.org/fred2/). The R code here makes use of the quantmod module to source the data from FRED.
 
+To express changes in consumption in real terms (i.e. adjusting for the effect of inflation), the PCE chain-type price index (PCECTPI) is used to adjust the PCE timeseries.
+
 If you have any questions, feel free to contact me @[seancarmody](http://twitter.com/seancarmody) on Twitter or, better still, @[mule](http://mulestable.net/mule) on the [Mule Stable](http://mulestable.net).
