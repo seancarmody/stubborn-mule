@@ -6,7 +6,7 @@
 # obtained via St Louis Fed "FRED" database using the quantmod package
 # http://research.stlouisfed.org/fred2/series/PCE
 #
-# The PCECTPI is a chain-type price index for personal consumption, with
+# The PCEPI is a chain-type price index for personal consumption, with
 # index base 2005 = 100. This can be used as a deflator to calculate PCE in
 # real terms.
 
@@ -16,13 +16,9 @@ library(quantmod)
 
 # Read in PCE data from FRED
 getSymbols("PCE", src="FRED")
-getSymbols("PCECTPI", src="FRED")
-PCE.t <- time(PCE)
-PCE <- merge(PCE, PCECTPI)
-# Linearly interpolate PCECTPI and extend final value
-PCE$DEFLATOR <- na.approx(PCE$PCECTPI, rule=2)
-PCE$REAL <- PCE$PCE / PCE$DEFLATOR * as.numeric(tail(PCE$DEFLATOR, 1))
-PCE <- PCE[PCE.t,]
+getSymbols("PCEPI", src="FRED")
+PCE <- merge(PCE, PCEPI)
+PCE$REAL <- PCE$PCE / PCE$PCEPI * as.numeric(tail(PCE$PCEPI, 1))
 
 # Draw full time-series chart
 png("PCE.png", height=350, width=400)
