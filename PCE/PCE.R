@@ -43,7 +43,7 @@ dev.off()
 
 # Dates from January 2005 (data for the last five years)
 recent <- index(PCE) >= as.Date("2005-01-01")
-png("PCE-10y.png", height=350, width=400)
+png("PCE-5y.png", height=350, width=400)
 
 # Set up margins
 par(mar=c(3.5,4,3,4))
@@ -63,10 +63,24 @@ labels <- axis.Date(side=3, x=time(PCE[recent]))
 abline(v=labels, lty="dotted", col="lightgrey")
 dev.off()
 
-# Plot expenditure growth
+# Plot year-on-year expenditure growth
 png("PCE-growth.png", height=350, width=400)
 par(mar=c(3.5,4,3,2.5))
 PCE.rate <- na.omit(diff(log(PCE), 12) * 100)
+plot(index(PCE.rate), PCE.rate$PCE, type="l", ylab="Expenditure Growth (% per annum)")
+lines(lowess(time(PCE.rate), PCE.rate$PCE, f=0.5), col="blue")
+
+Axis(side=4)
+grid(nx=NA, ny=NULL)
+labels <- axis.Date(side=3, x=index(PCE.rate))
+abline(v=labels, lty="dotted", col="lightgrey")
+legend(-850, 2.4, lty=1, col="blue", legend="smoothed growth rate", bty="n")
+dev.off()
+
+# Plot Quarterly expenditure growth
+png("PCE-growth-q.png", height=350, width=400)
+par(mar=c(3.5,4,3,2.5))
+PCE.rate <- na.omit(diff(log(PCE), 3) * 400)
 plot(index(PCE.rate), PCE.rate$PCE, type="l", ylab="Expenditure Growth (% per annum)")
 lines(lowess(time(PCE.rate), PCE.rate$PCE, f=0.5), col="blue")
 
