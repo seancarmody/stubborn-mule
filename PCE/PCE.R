@@ -5,6 +5,10 @@
 # Source data: BEA http://www.bea.gov/newsreleases/national/pi/pinewsrelease.htm
 # obtained via St Louis Fed "FRED" database using the quantmod package
 # http://research.stlouisfed.org/fred2/series/PCE
+#
+# The PCECTPI is a chain-type price index for personal consumption, with
+# index base 2005 = 100. This can be used as a deflator to calculate PCE in
+# real terms.
 
 # The quantmod package will have to be installed if it is not already in place
 # on your system.
@@ -42,7 +46,7 @@ abline(v=labels, lty="dotted", col="lightgrey")
 dev.off()
 
 # Dates from January 2005 (data for the last five years)
-recent <- index(PCE) >= as.Date("2005-01-01")
+recent <- time(PCE) >= as.Date("2005-01-01")
 png("PCE-5y.png", height=350, width=400)
 
 # Set up margins
@@ -67,12 +71,12 @@ dev.off()
 png("PCE-growth.png", height=350, width=400)
 par(mar=c(3.5,4,3,2.5))
 PCE.rate <- na.omit(diff(log(PCE), 12) * 100)
-plot(index(PCE.rate), PCE.rate$PCE, type="l", ylab="Expenditure Growth (% per annum)")
+plot(time(PCE.rate), PCE.rate$PCE, type="l", ylab="Expenditure Growth (% per annum)")
 lines(lowess(time(PCE.rate), PCE.rate$PCE, f=0.5), col="blue")
 
 Axis(side=4)
 grid(nx=NA, ny=NULL)
-labels <- axis.Date(side=3, x=index(PCE.rate))
+labels <- axis.Date(side=3, x=time(PCE.rate))
 abline(v=labels, lty="dotted", col="lightgrey")
 legend(-850, 2.4, lty=1, col="blue", legend="smoothed growth rate", bty="n")
 dev.off()
@@ -81,12 +85,12 @@ dev.off()
 png("PCE-growth-q.png", height=350, width=400)
 par(mar=c(3.5,4,3,2.5))
 PCE.rate <- na.omit(diff(log(PCE), 3) * 400)
-plot(index(PCE.rate), PCE.rate$PCE, type="l", ylab="Expenditure Growth (% per annum)")
+plot(time(PCE.rate), PCE.rate$PCE, type="l", ylab="Expenditure Growth (% per annum)")
 lines(lowess(time(PCE.rate), PCE.rate$PCE, f=0.5), col="blue")
 
 Axis(side=4)
 grid(nx=NA, ny=NULL)
-labels <- axis.Date(side=3, x=index(PCE.rate))
+labels <- axis.Date(side=3, x=time(PCE.rate))
 abline(v=labels, lty="dotted", col="lightgrey")
 legend(-850, 2.4, lty=1, col="blue", legend="smoothed growth rate", bty="n")
 dev.off()
@@ -95,13 +99,13 @@ dev.off()
 png("PCE-real-growth.png", height=350, width=400)
 par(mar=c(3.5,4,3,2.5))
 PCE.rate <- na.omit(diff(log(PCE$REAL), 12) * 100)
-plot(index(PCE.rate), PCE.rate$PCE, type="l", ylab="Expenditure Growth (% per annum)")
-lines(lowess(time(PCE.rate), PCE.rate$PCE, f=0.5), col="blue")
+plot(time(PCE.rate), PCE.rate$REAL, type="l", ylab="Real Expenditure Growth (% per annum)")
+lines(lowess(time(PCE.rate), PCE.rate$REAL, f=0.5), col="blue")
 
 Axis(side=4)
 grid(nx=NA, ny=NULL)
-labels <- axis.Date(side=3, x=index(PCE.rate))
+labels <- axis.Date(side=3, x=time(PCE.rate))
 abline(v=labels, lty="dotted", col="lightgrey")
-legend(-850, 2.4, lty=1, col="blue", legend="smoothed growth rate", bty="n")
+legend(4500, 8, lty=1, col="blue", legend="smoothed growth rate", bty="n")
 dev.off()
 
