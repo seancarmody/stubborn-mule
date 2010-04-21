@@ -12,6 +12,13 @@ library(quantmod)
 
 # Read in PCE data from FRED
 getSymbols("PCE", src="FRED")
+getSymbols("PCECTPI", src="FRED")
+PCE.t <- time(PCE)
+PCE <- merge(PCE, PCECTPI)
+# Linearly interpolate PCECTPI and extend final value
+PCE$DEFLATOR <- na.approx(PCE$PCECTPI, rule=2)
+PCE$REAL <- PCE$PCE / PCE$DEFLATOR * as.numeric(tail(PCE$DEFLATOR, 1))
+PCE <- PCE[PCE.t,]
 
 # Draw full time-series chart
 png("PCE.png", height=350, width=400)
@@ -60,6 +67,20 @@ dev.off()
 png("PCE-growth.png", height=350, width=400)
 par(mar=c(3.5,4,3,2.5))
 PCE.rate <- na.omit(diff(log(PCE), 12) * 100)
+plot(index(PCE.rate), PCE.rate$PCE, type="l", ylab="Expenditure Growth (% per annum)")
+lines(lowess(time(PCE.rate), PCE.rate$PCE, f=0.5), col="blue")
+
+Axis(side=4)
+grid(nx=NA, ny=NULL)
+labels <- axis.Date(side=3, x=index(PCE.rate))
+abline(v=labels, lty="dotted", col="lightgrey")
+legend(-850, 2.4, lty=1, col="blue", legend="smoothed growth rate", bty="n")
+dev.off()
+
+# Plot REAL expenditure growth
+png("PCE-real-growth.png", height=350, width=400)
+par(mar=c(3.5,4,3,2.5))
+PCE.rate <- na.omit(diff(log(PCE$REAL), 12) * 100)
 plot(index(PCE.rate), PCE.rate$PCE, type="l", ylab="Expenditure Growth (% per annum)")
 lines(lowess(time(PCE.rate), PCE.rate$PCE, f=0.5), col="blue")
 
