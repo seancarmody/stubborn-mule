@@ -10,20 +10,19 @@ library(zoo)
 xmm <- read.csv("xmm.csv")
 
 # Convert dates from strings to date format
-
 xmm$date <- as.Date(xmm$date)
 
 # Convert date into zoo format
 xmm <- zoo(xmm[,-1], order.by=xmm[,1])
 
 # Drop everything before 30 April 2010
-x <- xmm[time(xmm) >= as.Date("2010-04-30"),]
+x <- subset(xmm, time >= as.Date("2010-04-30"))
 
 # Rescale to 100 on 30 April
 x <- scale(x, center=FALSE, x[1,]) * 100
 
 # Calculate difference in cumulative returns
-x$difference <- x$ASX300 - x$XMM
+x$rtn.diff <- x$ASX300 - x$XMM
 
 # Create chart
 png("xmm.png", width=400, height=280, res=90)
