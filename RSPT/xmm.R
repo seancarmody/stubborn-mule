@@ -20,8 +20,6 @@ xmm <- zoo(xmm[,-1], order.by=xmm[,1])
 x <- xmm[time(xmm) >= as.Date("2010-04-30"),]
 
 # Rescale to 100 on 30 April
-#x$XMM <- x$XMM / as.numeric(x$XMM[1]) * 100
-#x$ASX300 <- x$ASX300 / as.numeric(x$ASX300[1]) * 100
 x <- scale(x, center=FALSE, x[1,]) * 100
 
 # Calculate difference in cumulative returns
