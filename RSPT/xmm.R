@@ -16,7 +16,7 @@ xmm$date <- as.Date(xmm$date)
 xmm <- zoo(xmm[,-1], order.by=xmm[,1])
 
 # Drop everything before 30 April 2010
-x <- subset(xmm, time >= as.Date("2010-04-30"))
+x <- xmm[time(xmm) >= as.Date("2010-04-30")]
 
 # Rescale to 100 on 30 April
 x <- scale(x, center=FALSE, x[1,]) * 100
