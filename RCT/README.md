@@ -36,7 +36,7 @@ The files:
 Usage:
 
 rct(cases, type="square", border="grey", fill=NULL, xlab=NULL, ylab="", lab.cex=1,
-	seed=NULL, label=FALSE, lab.col="grey", draw.plot=TRUE)
+seed=NULL, label=FALSE, lab.col="grey", draw.plot=TRUE)
 	
 * cases: single number or vector giving the number of seats to shade. If a vector is
   supplied, the values indicate how many seats of each colour to shade. The sum of this
