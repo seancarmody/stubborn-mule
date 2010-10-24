@@ -26,6 +26,11 @@ In the post [Shades of grey][3] I experimented further with the RCTs, introducin
 variable shading. Although the resulting charts are more efficient (i.e. they
 communicate the same information with less "ink"), they are harder to interpret.
 
+The files:
+
+plans.Rdata - contains a data frame with details of all of the floor plans
+RCT.R - defines the `rct` function to plot the RCTs
+
 [1]: http://theillusionofcertainty.com/index.html "The Illustion of Certainty"
 [2]: http://www.stubbornmule.net/2010/10/visualizing-smoking-risk/ "Visualizing Smoking Risk"
 [3]: http://www.stubbornmule.net/2010/10/shades-of-grey/ "Shades of grey"
