@@ -11,7 +11,7 @@
 
 if (!exists("rct.plans")) load("plans.Rdata")
 
-rct <- function(cases, type="square", border=par("fg"), 
+rct <- function(cases, type="square", border="grey", 
 		fill=NULL, xlab=NULL, ylab="", lab.cex=1, seed=NULL,
 		label=FALSE, lab.col="grey", draw.plot=TRUE) {
 	
