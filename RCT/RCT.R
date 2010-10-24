@@ -8,8 +8,8 @@
 
 if (!exists("rct.plans")) load("plans.Rdata")
 
-rct <- function(cases, type="square", border=par("fg"), fill=par("fg"),
-		xlab=NULL, ylab="", lab.cex=1,
+rct <- function(cases, type="square", border=par("fg"),
+		fill=NULL, xlab=NULL, ylab="", lab.cex=1,
 		label=FALSE, lab.col="grey", draw.plot=TRUE) {
 	
 	# Check the specified "floor plan" exists, otherwise use default
@@ -18,11 +18,15 @@ rct <- function(cases, type="square", border=par("fg"), fill=par("fg"),
 	
 	plan <- rct$plan
 	n <- dim(plan)[1]
-	if (length(fill) < length(cases)) fill <- rep(fill, length(cases))
+	if (length(fill) < length(cases)) fill <- rep(fill, length(cases))[1:length(cases)]
 
 	plan$taken <- FALSE
 	seats <- sample(1:n, sum(cases))
 	plan$taken[seats] <- TRUE
+
+	# Default shading: shades of grey
+	if (is.null(fill)) fill <- gray(0:(length(cases)-1)/length(cases))
+
 	col.hi <- cumsum(cases)
 	col.lo <- c(1, col.hi[-length(col.hi)]+1)
 	plan$col <- NA
@@ -44,6 +48,6 @@ rct <- function(cases, type="square", border=par("fg"), fill=par("fg"),
 			if (is.na(l$pos[1])) l$pos <- NULL
 			text(l$x, l$y, l$text, pos=l$pos, col=lab.col, xpd=NA, cex=lab.cex)
 			}
-		} else return(plan$taken)
+		} else return(plan)
 	}	
 	
