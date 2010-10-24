@@ -4,11 +4,14 @@
 #
 # Draws Risk Characterization Theatres (RCTs)
 #
-# Author: Sean Carmody
+# Requires the "plans.Rdata" file to load floor plans.
+#
+# Author:  Sean Carmody
+# Created: 20 October 2010
 
 if (!exists("rct.plans")) load("plans.Rdata")
 
-rct <- function(cases, type="square", border=par("fg"),
+rct <- function(cases, type="square", border=par("fg"), 
 		fill=NULL, xlab=NULL, ylab="", lab.cex=1, seed=NULL,
 		label=FALSE, lab.col="grey", draw.plot=TRUE) {
 	
@@ -19,6 +22,8 @@ rct <- function(cases, type="square", border=par("fg"),
 	# Get floor plan
 	plan <- rct$plan
 	n <- dim(plan)[1]
+	
+	# Recycle fill vector to have as many colours as cases
 	if (length(fill) < length(cases)) fill <- rep(fill, length(cases))[1:length(cases)]
 
 	# Assign seats
@@ -32,12 +37,8 @@ rct <- function(cases, type="square", border=par("fg"),
 	if (is.null(fill)) fill <- gray(0:(length(cases)-1)/length(cases))
 
 	# Colour each case type differently
-	col.hi <- cumsum(cases)
-	col.lo <- c(1, col.hi[-length(col.hi)]+1)
 	plan$col <- NA
-	for (i in seq(along=cases)) {
-		plan$col[seats[col.lo[i]:col.hi[i]]] <- fill[i]
-	}
+	plan$col[seats] <- unlist(sapply(seq(along=cases), function(i) rep(fill[i], cases[i])))
 	
 	# Get text labels (if they exist)
 	l <- rct$labels	
