@@ -9,7 +9,7 @@
 if (!exists("rct.plans")) load("plans.Rdata")
 
 rct <- function(cases, type="square", border=par("fg"),
-		fill=NULL, xlab=NULL, ylab="", lab.cex=1,
+		fill=NULL, xlab=NULL, ylab="", lab.cex=1, seed=NULL,
 		label=FALSE, lab.col="grey", draw.plot=TRUE) {
 	
 	# Check the specified "floor plan" exists, otherwise use default
@@ -21,6 +21,7 @@ rct <- function(cases, type="square", border=par("fg"),
 	if (length(fill) < length(cases)) fill <- rep(fill, length(cases))[1:length(cases)]
 
 	plan$taken <- FALSE
+	if (!is.null(seed)) set.seed(seed)
 	seats <- sample(1:n, sum(cases))
 	plan$taken[seats] <- TRUE
 
