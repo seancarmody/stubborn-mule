@@ -32,6 +32,29 @@ The files:
   contains a data frame with details of all of the floor plans
 * RCT.R
   defines the `rct` function to plot the RCTs
+  
+Usage:
+
+rct(cases, type="square", border="grey", fill=NULL, xlab=NULL, ylab="", lab.cex=1,
+	seed=NULL, label=FALSE, lab.col="grey", draw.plot=TRUE)
+	
+* cases: single number or vector giving the number of seats to shade. If a vector is
+  supplied, the values indicate how many seats of each colour to shade. The sum of this
+  vector gives the total number of seats shaded
+* type: the floor plan to be used. Current options are "square", "theatre" (the original
+  Rifkin and Bouwer floor plan), "stadium" and "bigsquare"
+* border: the color for the outlines of the floor plan
+* fill: vector of colours for shading seats. If no value is supplied, the default is
+  a sequence of shades of grey
+* xlab: text label to appear below floor plan. Default is "x cases in n"
+* lab.cex: character expansion factor (see 'par') to specify size of text labels (if any)
+  on the floor plan
+* seed: specify the starting seed value for the random number generator. Setting this
+  makes it possible to reproduce exactly the same shaded seats on successive calls of rct
+* label: if TRUE, any text labels for the specified floor plan will be displayed
+* lab.col: colour used for any text labels
+* draw.plot: if this is FALSE, the RCT is not drawn and instead a data frame is returned
+  showing the seats that would have been shaded and the colours that would have been used
 
 [1]: http://theillusionofcertainty.com/index.html "The Illustion of Certainty"
 [2]: http://www.stubbornmule.net/2010/10/visualizing-smoking-risk/ "Visualizing Smoking Risk"
