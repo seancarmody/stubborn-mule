@@ -26,6 +26,8 @@ In the post [Shades of grey][3] I experimented further with the RCTs, introducin
 variable shading. Although the resulting charts are more efficient (i.e. they
 communicate the same information with less "ink"), they are harder to interpret.
 
+![Sample RCT graphic][4]
+
 The files
 ---------
 
@@ -80,3 +82,4 @@ href="http://github.com/seancarmody/stubborn-mule/tree/master/RCT/" rel="dct:sou
 [1]: http://theillusionofcertainty.com/index.html "The Illustion of Certainty"
 [2]: http://www.stubbornmule.net/2010/10/visualizing-smoking-risk/ "Visualizing Smoking Risk"
 [3]: http://www.stubbornmule.net/2010/10/shades-of-grey/ "Shades of grey"
+[4]: http://github.com/seancarmody/stubborn-mule/blob/master/RCT/sample2.png "Sample RCT graphic"
