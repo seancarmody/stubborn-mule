@@ -22,9 +22,10 @@ rct <- function(cases, type="square", border="grey", xlim=c(0, 1), ylim=c(0, 1),
 	# Get floor plan
 	plan <- rct$plan
 	n <- dim(plan)[1]
+	m <- length(cases)
 	
 	# Recycle fill vector to have as many colours as cases
-	if (length(fill) < length(cases)) fill <- rep(fill, length(cases))[1:length(cases)]
+	if (length(fill) < m) fill <- rep(fill, m)[1:m]
 
 	# Assign seats
 	plan$taken <- FALSE
@@ -34,7 +35,7 @@ rct <- function(cases, type="square", border="grey", xlim=c(0, 1), ylim=c(0, 1),
 	plan$taken[seats] <- TRUE
 
 	# Default shading: shades of grey
-	if (is.null(fill)) fill <- gray(0:(length(cases)-1)/length(cases))
+	if (is.null(fill)) fill <- gray(0:(m-1)/m)
 
 	# Colour each case type differently
 	plan$col <- NA
