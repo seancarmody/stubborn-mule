@@ -39,7 +39,7 @@ rct <- function(cases, type="square", border="grey", xlim=c(0, 1), ylim=c(0, 1),
 
 	# Colour each case type differently
 	plan$col <- NA
-	plan$col[seats] <- unlist(sapply(seq(along=cases), function(i) rep(fill[i], cases[i])))
+	plan$col[seats] <- unlist(sapply(1:m, function(i) rep(fill[i], cases[i])))
 	
 	# Get text labels (if they exist)
 	l <- rct$labels	
