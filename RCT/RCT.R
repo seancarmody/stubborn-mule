@@ -25,7 +25,7 @@ rct <- function(cases, type="square", border="grey", xlim=c(0, 1), ylim=c(0, 1),
 	m <- length(cases)
 	
 	# Recycle fill vector to have as many colours as cases
-	if (length(fill) < m) fill <- rep(fill, m)[1:m]
+	if (length(fill) < m) fill <- rep(fill, ceiling(m/length(fill)))[1:m]
 
 	# Assign seats
 	plan$taken <- FALSE
