@@ -12,7 +12,7 @@
 if (!exists("rct.plans")) load("plans.Rdata")
 
 rct <- function(cases, type="square", border="grey", xlim=c(0, 1), ylim=c(0, 1),
-		fill=NULL, xlab=NULL, ylab="", lab.cex=1, seed=NULL,
+		fill=NULL, xlab=NULL, ylab="", lab.cex=1, seed=NULL, plot.new=TRUE,
 		label=FALSE, lab.col="grey", draw.plot=TRUE) {
 	
 	# Check the specified "floor plan" exists, otherwise use default
@@ -50,7 +50,7 @@ rct <- function(cases, type="square", border="grey", xlim=c(0, 1), ylim=c(0, 1),
 	
 	# Plot RCT
 	if (draw.plot) {
-		plot(xlim, ylim, type="n", axes=FALSE, xlab=xlab, ylab=ylab)
+		if (plot.new) plot(xlim, ylim, type="n", axes=FALSE, xlab=xlab, ylab=ylab)
 		rect(plan$xleft, plan$ybottom, plan$xright, plan$ytop,
 			border=border, col=plan$col)
 		# Add text labels (if required)
