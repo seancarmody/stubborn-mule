@@ -35,8 +35,9 @@ The files:
   
 Usage:
 
-rct(cases, type="square", border="grey", fill=NULL, xlab=NULL, ylab="", lab.cex=1,
-seed=NULL, label=FALSE, lab.col="grey", draw.plot=TRUE)
+rct(cases, type="square", border="grey", xlim=c(0, 1), ylim=c(0, 1),
+fill=NULL, xlab=NULL, ylab="", lab.cex=1, seed=NULL, plot.new=TRUE,
+label=FALSE, lab.col="grey", draw.plot=TRUE, ...)
 	
 * cases: single number or vector giving the number of seats to shade. If a vector is
   supplied, the values indicate how many seats of each colour to shade. The sum of this
@@ -44,6 +45,8 @@ seed=NULL, label=FALSE, lab.col="grey", draw.plot=TRUE)
 * type: the floor plan to be used. Current options are "square", "theatre" (the original
   Rifkin and Bouwer floor plan), "stadium" and "bigsquare"
 * border: the color for the outlines of the floor plan
+* xlim, ylim: specify the range of the x and y axes. Note that the theate sits in the
+  unit square with bottom corner (0, 0) and top corner (1, 1).
 * fill: vector of colours for shading seats. If no value is supplied, the default is
   a sequence of shades of grey
 * xlab: text label to appear below floor plan. Default is "x cases in n"
@@ -51,10 +54,12 @@ seed=NULL, label=FALSE, lab.col="grey", draw.plot=TRUE)
   on the floor plan
 * seed: specify the starting seed value for the random number generator. Setting this
   makes it possible to reproduce exactly the same shaded seats on successive calls of rct
+* plot.new: if FALSE, the theatre is drawn over the top of an existing plot
 * label: if TRUE, any text labels for the specified floor plan will be displayed
 * lab.col: colour used for any text labels
 * draw.plot: if this is FALSE, the RCT is not drawn and instead a data frame is returned
   showing the seats that would have been shaded and the colours that would have been used
+* ...: any additional parameters are passed through to the plot call that sets up the chart
   
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
 <img alt="Creative Commons License" style="border-width:0"
