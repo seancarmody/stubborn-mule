@@ -82,4 +82,4 @@ href="http://github.com/seancarmody/stubborn-mule/tree/master/RCT/" rel="dct:sou
 [1]: http://theillusionofcertainty.com/index.html "The Illustion of Certainty"
 [2]: http://www.stubbornmule.net/2010/10/visualizing-smoking-risk/ "Visualizing Smoking Risk"
 [3]: http://www.stubbornmule.net/2010/10/shades-of-grey/ "Shades of grey"
-[4]: http://github.com/seancarmody/stubborn-mule/blob/master/RCT/sample2.png "Sample RCT graphic"
+[4]: http://github.com/seancarmody/stubborn-mule/raw/master/RCT/sample2.png "Sample RCT graphic"
