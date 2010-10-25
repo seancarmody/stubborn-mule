@@ -16,6 +16,8 @@ As they explain it:
 > of published risk factors (e.g., elevated cholesterol, exposure to
 > low levels of environmental contaminants).
 
+![Sample RCT graphic][4]
+
 I wrote about the use of RCTs in the blog post [Visualizing Smoking Risk][2],
 which draws on one of Rifkin and Bouwer's case studies. For this post I wrote
 some R code to facilitate drawing the theatres. As well as reproducing the standard
@@ -26,7 +28,7 @@ In the post [Shades of grey][3] I experimented further with the RCTs, introducin
 variable shading. Although the resulting charts are more efficient (i.e. they
 communicate the same information with less "ink"), they are harder to interpret.
 
-![Sample RCT graphic][4]
+
 
 The files
 ---------
@@ -64,7 +66,9 @@ Usage
 * `draw.plot`: if this is FALSE, the RCT is not drawn and instead a data frame is returned
   showing the seats that would have been shaded and the colours that would have been used
 * `...`: any additional parameters are passed through to the plot call that sets up the chart
-  
+
+* * *
+
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
 <img alt="Creative Commons License" style="border-width:0"
 src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />
