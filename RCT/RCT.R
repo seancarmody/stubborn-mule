@@ -51,8 +51,10 @@ rct <- function(cases, type="square", border="grey", xlim=c(0, 1), ylim=c(0, 1),
 	
 	# Plot RCT
 	if (draw.plot) {
+		# If plot device doesn't exist or if plot.new=TRUE, create new plot
 		if ((dev.cur() == 1) | plot.new) plot(xlim, ylim, type="n",
 			axes=FALSE, xlab=xlab, ylab=ylab, ...)
+		# Draw plan and fill seats
 		rect(plan$xleft, plan$ybottom, plan$xright, plan$ytop,
 			border=border, col=plan$col)
 		# Add text labels (if required)
