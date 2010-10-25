@@ -11,7 +11,7 @@
 
 if (!exists("rct.plans")) load("plans.Rdata")
 
-rct <- function(cases, type="square", border="grey", 
+rct <- function(cases, type="square", border="grey", xlim=c(0, 1), ylim=c(0, 1),
 		fill=NULL, xlab=NULL, ylab="", lab.cex=1, seed=NULL,
 		label=FALSE, lab.col="grey", draw.plot=TRUE) {
 	
@@ -50,7 +50,7 @@ rct <- function(cases, type="square", border="grey",
 	
 	# Plot RCT
 	if (draw.plot) {
-		plot(c(0, 1), c(0, 1), type="n", axes=FALSE, xlab=xlab, ylab=ylab)
+		plot(xlim, ylim, type="n", axes=FALSE, xlab=xlab, ylab=ylab)
 		rect(plan$xleft, plan$ybottom, plan$xright, plan$ytop,
 			border=border, col=plan$col)
 		# Add text labels (if required)

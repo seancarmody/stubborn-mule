@@ -56,7 +56,19 @@ seed=NULL, label=FALSE, lab.col="grey", draw.plot=TRUE)
 * draw.plot: if this is FALSE, the RCT is not drawn and instead a data frame is returned
   showing the seats that would have been shaded and the colours that would have been used
   
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">RCT</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.stubbornmule.net" property="cc:attributionName" rel="cc:attributionURL">http://www.stubbornmule.net</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="http://github.com/seancarmody/stubborn-mule/tree/master/RCT/" rel="dct:source">github.com</a>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
+<img alt="Creative Commons License" style="border-width:0"
+src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />
+<span xmlns:dct="http://purl.org/dc/terms/"
+href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">RCT</span> by 
+<a xmlns:cc="http://creativecommons.org/ns#" href="http://www.stubbornmule.net"
+property="cc:attributionName" rel="cc:attributionURL">http://www.stubbornmule.net</a>
+is licensed under a  
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons
+Attribution-ShareAlike 3.0 Unported License</a>.
+<br />
+Based on a work at <a xmlns:dct="http://purl.org/dc/terms/"
+href="http://github.com/seancarmody/stubborn-mule/tree/master/RCT/" rel="dct:source">github.com</a>
 
 [1]: http://theillusionofcertainty.com/index.html "The Illustion of Certainty"
 [2]: http://www.stubbornmule.net/2010/10/visualizing-smoking-risk/ "Visualizing Smoking Risk"
