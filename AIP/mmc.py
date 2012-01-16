@@ -70,7 +70,8 @@ for state in states:
 		n = len(data['city'])
 		logging.info('Records read for %s: %d' % (state, n))
 		for i in range(n):
-			town = data['city'][i]
+			# Strip footnote label '3' from Capital Cities
+			town = data['city'][i].rstrip('3')
 			for f in [x.lower() for x in fields[1:]]:
 				price =  data[f][i]
 				if price != 'N/A':
