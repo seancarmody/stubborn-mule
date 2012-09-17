@@ -30,7 +30,7 @@ def get_speech(url):
     try:
 	posted_time = time.strptime(posted_str, '%A, %d %B %Y')
 	posted_date = datetime.date(*posted_time[:3])
-	results['date'] = posted_date
+	results['date'] = posted_date.strftime('%Y-%m-%d')
     except ValueError:
 	results['date'] = 'NA'       
 
@@ -51,35 +51,38 @@ def get_speeches(urls):
     ''' Loop through list of speech urlsl, call get_speech()
     '''
 
-    summary = {}
+    speeches = {}
     for speech_url in urls:
-        results = get_speech(speech_url)
-        date_str = results['date'].strftime('%Y-%m-%d')
-        print
-        print 'TITLE: ' + results['title']
-        print 'DATE: ' + results['posted']
-        print 'DATE (conv): ' + date_str
-        print 'TEXT: %d' % len(results['text'])
-        filename = date_str + "-" + results['digest'][:5]
-        summary[filename] = results
-        speech_file = open(os.path.join('abbott', filename), 'w')
-        speech_file.write(results['text'])
+        speech = get_speech(speech_url)
+        filename = speech['date'] + "-" + speech['digest'][:5]
+        speeches[filename] = speech
+        log_speech(speech)
+    return speeches
+
+def log_speech(speech):
+    print
+    print 'TITLE: ' + speech['title']
+    print 'DATE: ' + speech['posted']
+    print 'DATE (conv): ' + speech['date']
+    print 'TEXT: %d' % len(speech['text'])
+
+def save_speeches(speeches, dirname='abbott'):
+    for filename, speech in speeches.items():
+        speech_file = open(os.path.join(dirname, filename), 'w')
+        speech_file.write(speech['text'])
         speech_file.write("\n")
         speech_file.close()
-    return summary
 
 if __name__ == '__main__':
-    #summary = get_pages([0])
     urls = get_links(url_base % 0)
-    summary = get_speeches(urls)
-    with open('summary.csv', 'wb') as csvfile:
+    speeches = get_speeches(urls)
+    save_speeches(speeches)
+
+    with open('speeches.csv', 'wb') as csvfile:
         cw = csv.writer(csvfile, quoting=csv.QUOTE_MINIMAL)
         cw.writerow(['filename', 'title', 'date', 'digest'])
-        for key in summary:
-            speech = summary[key]
-            date_str = speech['date'].strftime('%Y-%m-%d')
+        for key in speeches:
+            speech = speeches[key]
             cw.writerow([key, speech['title'].encode('utf-8'), 
-                date_str, speech['digest']])
-
-
+                speech['date'], speech['digest']])
 
