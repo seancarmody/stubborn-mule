@@ -73,6 +73,6 @@ p <- ggplot(word.freq, aes(x=year, y=count)) +
   facet_wrap(~word) + geom_bar(stat="identity") +
   labs(x="", y="Occurrences")
 
-png("abbot-words.png", width=500, height=350, res=100)
+png("abbott-words.png", width=500, height=350, res=100)
 print(p)
 dev.off()
