@@ -9,7 +9,7 @@ if (!exists("clean")) clean <- TRUE
 if (!exists("abbott")) {
   abbott <- Corpus(DirSource("abbott"))  
   
-  meta.data <- read.csv("summary.csv", as.is=TRUE)
+  meta.data <- read.csv("speeches.csv", as.is=TRUE)
   rownames(meta.data) <- meta.data$filename
   
   idx <- names(abbott)
