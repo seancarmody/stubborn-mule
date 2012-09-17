@@ -43,34 +43,6 @@ def get_speech(url):
     results['speech'] = speech
     return(results)
 
-def get_pages(page_range):
-    ''' Loop through list of speeches, grab the url and call get_speech()
-    '''
-
-    summary = {}
-    for p in page_range:
-    	print 'PROCOESSING PAGE %d' % p
-	print
-        url = url_base % p
-	print 'PAGE URL: ' + url
-	print
-        page = lxml.html.parse(url)
-        for speech_url in [e.get('href') for e in page.xpath('//h2/a')]:
-            results = get_speech(speech_url)
-	    date_str = results['date'].strftime('%Y-%m-%d')
-            print
-            print 'TITLE: ' + results['title']
-            print 'DATE: ' + results['posted']
-	    print 'DATE (conv): ' + date_str
-            print 'TEXT: %d' % len(results['text'])
-            filename = date_str + "-" + results['digest'][:5]
-            summary[filename] = results
-            speech_file = open(os.path.join('abbott', filename), 'w')
-            speech_file.write(results['text'])
-	    speech_file.write("\n")
-            speech_file.close()
-    return summary
-
 def get_links(url):
     page = lxml.html.parse(url)
     return [e.get('href') for e in page.xpath('//h2/a')]
@@ -95,10 +67,11 @@ def get_speeches(urls):
         speech_file.write("\n")
         speech_file.close()
     return summary
-    
 
 if __name__ == '__main__':
-    summary = get_pages([0])
+    #summary = get_pages([0])
+    urls = get_links(url_base % 0)
+    summary = get_speeches(urls)
     with open('summary.csv', 'wb') as csvfile:
         cw = csv.writer(csvfile, quoting=csv.QUOTE_MINIMAL)
         cw.writerow(['filename', 'title', 'date', 'digest'])
