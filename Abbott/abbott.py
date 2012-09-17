@@ -80,9 +80,9 @@ if __name__ == '__main__':
 
     with open('speeches.csv', 'wb') as csvfile:
         cw = csv.writer(csvfile, quoting=csv.QUOTE_MINIMAL)
-        cw.writerow(['filename', 'title', 'date', 'digest'])
+        cw.writerow(['filename', 'title', 'date', 'url', 'digest'])
         for key in speeches:
             speech = speeches[key]
             cw.writerow([key, speech['title'].encode('utf-8'), 
-                speech['date'], speech['digest']])
+                speech['date'], speech['url'], speech['digest']])
 
