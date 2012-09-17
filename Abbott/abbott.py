@@ -71,6 +71,32 @@ def get_pages(page_range):
             speech_file.close()
     return summary
 
+def get_links(url):
+    page = lxml.html.parse(url)
+    return [e.get('href') for e in page.xpath('//h2/a')]
+
+def get_speeches(urls):
+    ''' Loop through list of speech urlsl, call get_speech()
+    '''
+
+    summary = {}
+    for speech_url in urls:
+        results = get_speech(speech_url)
+        date_str = results['date'].strftime('%Y-%m-%d')
+        print
+        print 'TITLE: ' + results['title']
+        print 'DATE: ' + results['posted']
+        print 'DATE (conv): ' + date_str
+        print 'TEXT: %d' % len(results['text'])
+        filename = date_str + "-" + results['digest'][:5]
+        summary[filename] = results
+        speech_file = open(os.path.join('abbott', filename), 'w')
+        speech_file.write(results['text'])
+        speech_file.write("\n")
+        speech_file.close()
+    return summary
+    
+
 if __name__ == '__main__':
     summary = get_pages([0])
     with open('summary.csv', 'wb') as csvfile:
