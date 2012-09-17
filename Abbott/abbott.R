@@ -1,3 +1,5 @@
+# Plot Tony Abbott word cloud and usage history chart
+
 require(tm)
 require(wordcloud)
 library(plyr)
