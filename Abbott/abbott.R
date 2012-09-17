@@ -1,6 +1,7 @@
 require(tm)
 require(wordcloud)
 library(plyr)
+library(reshape2)
 
 if (!exists("clean")) clean <- TRUE
 
@@ -53,9 +54,19 @@ get_words <- function(words, label) {
   word.count$year <- as.numeric(substr(rownames(word.count), 1, 4))
   x <- ddply(word.count, .(year), summarise, count=sum(count))
   names(x)[2] <- label
+  x
 }
 
 dtm <- DocumentTermMatrix(abbott)
-boats <- get_words(c("boat", "boats"), "boats")
 
+word.list <- c("tax", "boat", "boats", "carbon", "howard", "reform")
+word.freq <- as.data.frame(as.matrix(dtm[, word.list]))
+word.freq$boat <- with(word.freq, boats + boat)
+word.freq$boats <- NULL
+word.freq$year <- as.numeric(substr(rownames(word.freq), 1, 4))
 
+word.freq <- melt(word.freq, id="year", variable.name="word", value.name="freq")
+word.freq <- ddply(word.freq, .(year, word), summarise, count=sum(freq))
+
+ggplot(word.freq, aes(x=year, y=count)) +
+  facet_wrap(~word) + geom_bar(stat="identity")
