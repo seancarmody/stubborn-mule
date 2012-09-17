@@ -1,6 +1,7 @@
 require(tm)
 require(wordcloud)
 library(plyr)
+library(ggplot2)
 library(reshape2)
 
 if (!exists("clean")) clean <- TRUE
