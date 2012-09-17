@@ -40,7 +40,7 @@ m <- as.matrix(tdm)
 v <- sort(rowSums(m), decreasing=TRUE)
 d <- data.frame(word=names(v), freq=v)
 
-if (!exists("n.words")) n.words <- 50
+if (!exists("n.words")) n.words <- 150
 
 png("wc.png", width=600, height=600)
 par(mar=rep(0, 4), oma=rep(0, 4))
@@ -60,7 +60,7 @@ get_words <- function(words, label) {
 
 dtm <- DocumentTermMatrix(abbott)
 
-word.list <- c("tax", "boat", "boats", "carbon", "howard", "reform")
+word.list <- c("tax", "carbon", "howard", "reform", "health", "boat", "boats")
 word.freq <- as.data.frame(as.matrix(dtm[, word.list]))
 word.freq$boat <- with(word.freq, boats + boat)
 word.freq$boats <- NULL
@@ -69,5 +69,10 @@ word.freq$year <- as.numeric(substr(rownames(word.freq), 1, 4))
 word.freq <- melt(word.freq, id="year", variable.name="word", value.name="freq")
 word.freq <- ddply(word.freq, .(year, word), summarise, count=sum(freq))
 
-ggplot(word.freq, aes(x=year, y=count)) +
-  facet_wrap(~word) + geom_bar(stat="identity")
+p <- ggplot(word.freq, aes(x=year, y=count)) +
+  facet_wrap(~word) + geom_bar(stat="identity") +
+  labs(x="", y="Occurrences")
+
+png("abbot-words.png", width=500, height=350, res=100)
+print(p)
+dev.off()
